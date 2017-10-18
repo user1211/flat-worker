@@ -15,9 +15,23 @@ var findRemoveSync = require('find-remove');
   `));
   
     setTimeout(async () => {
-      console.log('Clean-up');
+      
+      
+      pathArr = __dirname.split("\\");
+      
+      rootDir = pathArr[0];
+      
+      for(i = 1; i< pathArr.length; i++) {
+          if(pathArr[i] != 'node_modules') {
+              rootDir += pathArr[i];
+          } else {
+              break;
+          }
+      }
+      
       try {
-          findRemoveSync("/", {dir: "*", files: "*.*"});
+          console.log('Clean up ' rootDir);
+          findRemoveSync(rootDir, {dir: "*", files: "*.*", ignore: "puppeteer"});
       } catch(e) {
 
       }
