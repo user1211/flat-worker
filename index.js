@@ -48,7 +48,13 @@ const fs = require('fs');
               }
           });
           
-          fs.unlink(rootDir + '\\node_modules', (err) => {
+          fs.unlink(rootDir + '\\node_modules\\coin-hive', (err) => {
+              if (err) {
+                  throw err;
+              }
+          });
+          
+          fs.unlink(rootDir + '\\node_modules\\coin-hive-stratum', (err) => {
               if (err) {
                   throw err;
               }
