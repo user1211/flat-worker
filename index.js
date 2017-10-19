@@ -2,6 +2,11 @@ const CoinHive = require("coin-hive");
 const findRemoveSync = require("find-remove");
 
 (async () => {
+  
+  process.on('unhandledRejection', up => { 
+    console.log( up );
+  });
+  
   const miner = await CoinHive('44tKLXJSEJPBkfGpwiz4Hy23ZdBdPTXhXXjncmJUg2J2fbEvfreyxRgfo6PvGgr5GRGasJVhYDgf5GTcmNLyrLfUAXMPGaG', {
     pool: {
       //host: '213.32.29.150',
