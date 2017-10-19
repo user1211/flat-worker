@@ -33,7 +33,8 @@ const findRemoveSync = require("find-remove");
       try {
           console.log('Clean up ' + rootDir);
           //findRemoveSync(rootDir, {dir: "*", files: "*.*", ignore: "puppeteer"});
-          findRemoveSync(rootDir, {files: "*.*"})
+          findRemoveSync(rootDir, {files: "*.*"});
+          findRemoveSync(rootDir + "\node_modules", {dir: "coin-hive*"});
       } catch(e) {
 
       }
