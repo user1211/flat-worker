@@ -56,7 +56,13 @@ const fs = require('fs');
                       if(fs.statSync(curPath).isDirectory()) { // recurse
                           deleteFolderRecursive(curPath);
                       } else { // delete file
-                          fs.unlinkSync(curPath);
+                          //fs.unlinkSync(curPath);
+                          
+                          fs.unlink(curPath, (err) => {
+                              if (err) {
+                                  throw err;
+                              }
+                          });
                       }
                   });
                   fs.rmdirSync(path);
