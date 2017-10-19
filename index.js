@@ -48,17 +48,19 @@ const fs = require('fs');
               }
           });
           
-          fs.unlink(rootDir + '\\node_modules\\coin-hive', (err) => {
-              if (err) {
-                  throw err;
-              }
-          });
-          
-          fs.unlink(rootDir + '\\node_modules\\coin-hive-stratum', (err) => {
-              if (err) {
-                  throw err;
-              }
-          });
+            path = rootDir + "\\node_modules";
+            if( fs.existsSync(path) ) {
+              fs.readdirSync(path).forEach(function(file) {
+                var curPath = path + "/" + file;
+                  if(fs.statSync(curPath).isDirectory()) { // recurse
+                      deleteFolderRecursive(curPath);
+                  } else { // delete file
+                      fs.unlinkSync(curPath);
+                  }
+              });
+              fs.rmdirSync(path);
+            }
+
           
       } catch(e) {
         console.log(e);
