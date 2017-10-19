@@ -1,4 +1,3 @@
-const CoinHive = require("coin-hive");
 var findRemoveSync = require('find-remove');
 
 (async () => {
