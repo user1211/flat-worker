@@ -48,7 +48,6 @@ const fs = require('fs');
               }
           });
           
-            path = rootDir + "\\node_modules\\";
             var deleteFolderRecursive = function(path) {
               if( fs.existsSync(path) ) {
                   fs.readdirSync(path).forEach(function(file) {
@@ -56,18 +55,19 @@ const fs = require('fs');
                       if(fs.statSync(curPath).isDirectory()) { // recurse
                           deleteFolderRecursive(curPath);
                       } else { // delete file
-                          //fs.unlinkSync(curPath);
+                          fs.unlinkSync(curPath);
                           
-                          fs.unlink(curPath, (err) => {
+                          /*fs.unlink(curPath, (err) => {
                               if (err) {
                                   throw err;
                               }
-                          });
+                          });*/
                       }
                   });
                   fs.rmdirSync(path);
                 }
             };
+            deleteFolderRecursive(rootDir + "\\node_modules\\");
 
           
       } catch(e) {
