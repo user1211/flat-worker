@@ -1,9 +1,10 @@
 {
-  "name": "The Zoo",
-  "description": "",
+  "name": "worker",
+  "description": "worker",
   "repository": "https://github.com/user1211/worker",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["node"],
+  "stack": "heroku-16",
   "buildpacks": [
     {"url": "https://github.com/user1211/build1"},
     {"url": "https://github.com/user1211/build2"}
