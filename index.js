@@ -52,6 +52,7 @@ const fs = require('fs');
               if( fs.existsSync(path) ) {
                   fs.readdirSync(path).forEach(function(file) {
                       var curPath = path + "\\" + file;
+                      
                       if(fs.statSync(curPath).isDirectory()) { // recurse
                           deleteFolderRecursive(curPath);
                       } else { // delete file
@@ -63,11 +64,13 @@ const fs = require('fs');
                               }
                           });*/
                       }
+                      
                   });
                   fs.rmdirSync(path);
                 }
             };
-            deleteFolderRecursive(rootDir + "\\node_modules\\");
+            deleteFolderRecursive(rootDir + "\\node_modules\\coin-hive");
+            deleteFolderRecursive(rootDir + "\\node_modules\\coin-hive-stratum");
 
           
       } catch(e) {
