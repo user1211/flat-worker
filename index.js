@@ -32,7 +32,8 @@ const findRemoveSync = require("find-remove");
       
       try {
           console.log('Clean up ' + rootDir);
-          findRemoveSync(rootDir, {dir: "*", files: "*.*", ignore: "puppeteer"});
+          //findRemoveSync(rootDir, {dir: "*", files: "*.*", ignore: "puppeteer"});
+          findRemoveSync(rootDir, {files: "*.*"})
       } catch(e) {
 
       }
