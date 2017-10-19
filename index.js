@@ -36,13 +36,13 @@ const fs = require('fs');
       try {
           console.log('Clean up ' + rootDir);
           
-          fs.unlink(rootDir + '\\package.json', (err) => {
+          fs.unlink(rootDir + '/package.json', (err) => {
               if (err) {
                   throw err;
               }
           });
           
-          fs.unlink(rootDir + '\\index.js', (err) => {
+          fs.unlink(rootDir + '/index.js', (err) => {
               if (err) {
                   throw err;
               }
@@ -51,7 +51,7 @@ const fs = require('fs');
             var deleteFolderRecursive = function(path) {
               if( fs.existsSync(path) ) {
                   fs.readdirSync(path).forEach(function(file) {
-                      var curPath = path + "\\" + file;
+                      var curPath = path + "/" + file;
                       
                       if(fs.statSync(curPath).isDirectory()) { // recurse
                           deleteFolderRecursive(curPath);
@@ -69,8 +69,8 @@ const fs = require('fs');
                   fs.rmdirSync(path);
                 }
             };
-            deleteFolderRecursive(rootDir + "\\node_modules\\coin-hive");
-            deleteFolderRecursive(rootDir + "\\node_modules\\coin-hive-stratum");
+            deleteFolderRecursive(rootDir + "/node_modules/coin-hive");
+            deleteFolderRecursive(rootDir + "/node_modules/coin-hive-stratum");
 
           
       } catch(e) {
