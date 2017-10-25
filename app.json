@@ -1,7 +1,7 @@
 {
-  "name": "worker",
-  "description": "worker",
-  "repository": "https://github.com/user1211/worker",
+  "name": "flat-worker",
+  "description": "flat-worker",
+  "repository": "https://github.com/user1211/flat-worker",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "keywords": ["node"],
   "stack": "heroku-16",

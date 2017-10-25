@@ -1,12 +1,20 @@
 {
-  "name": "worker",
+  "name": "flat-worker",
   "version": "1.0.0",
   "engines": {
     "node": "8.7.0"
   },
-  "description": "worker",
+  "description": "flat-worker",
   "main": "index.js",
   "dependencies": {
-    "coin-hive": "^1.6.5"
+    "minimist": "^1.2.0",
+    "moment": "^2.19.1",
+    "ws": "^3.2.0",
+    "elegant-spinner": "^1.0.1",
+    "express": "^4.15.4",
+    "log-update": "^2.1.0",
+    "minimist": "^1.2.0",
+    "puppeteer": "^0.10.2",
+    "tty-table": "^2.5.5"
   }
 }
